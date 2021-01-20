@@ -1,7 +1,8 @@
+import json
+
+import cerberus
 import pytest
 import requests
-import cerberus
-import json
 
 
 class TestOpenBreweryDB:

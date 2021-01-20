@@ -1,6 +1,6 @@
-import requests
 import cerberus
 import pytest
+import requests
 
 
 class TestDogAPI:
