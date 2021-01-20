@@ -1,0 +1,32 @@
+{
+  "id": {"type": "integer"},
+  "name": {"type": "string"},
+  "username": {"type": "string"},
+  "email": {"type": "string"},
+  "address":
+      {"type": "dict", "schema":
+          {
+              "street": {"type": "string"},
+              "suite": {"type": "string"},
+              "city": {"type": "string"},
+              "zipcode": {"type": "string"},
+              "geo":
+                  {"type": "dict", "schema":
+                      {
+                          "lat": {"type": "string"},
+                          "lng": {"type": "string"}
+                      }
+                   }
+          }
+       },
+  "phone": {"type": "string"},
+  "website": {"type": "string"},
+  "company":
+      {"type": "dict", "schema":
+          {
+              "name": {"type": "string"},
+              "catchPhrase": {"type": "string"},
+              "bs": {"type": "string"}
+          }
+       }
+}
