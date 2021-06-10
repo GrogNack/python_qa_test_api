@@ -1,20 +1,25 @@
+from unittest.mock import patch
+
 import cerberus
 import pytest
 import requests
+import json
 
 
 class TestDogAPI:
     base_url = "https://dog.ceo/api"
 
-    def test_single_random_image_methods(self):
+
+    @patch('requests.get', return_value='{"message":"https:\/\/images.dog.ceo\/breeds\/sheepdog-shetland\/n02105855_19782.jpg","status":"success"}')
+    def test_single_random_image_methods(self, mock_requests):
         schema = {
             "message": {"type": "string"},
             "status": {"type": "string"}
         }
-        result = requests.get(self.base_url + '/breeds/image/random')
+        result = requests.get(self.base_url + '/breeds/image/random2')
         v = cerberus.Validator()
-        assert result.status_code == 200
-        assert v.validate(result.json(), schema)
+        # assert result.status_code == 200
+        assert v.validate(json.loads(result), schema)
 
     def test_list_all_breeds(self):
         schema = {
