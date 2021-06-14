@@ -7,7 +7,7 @@ pip install pipenv
 pipenv shell
 pipenv install
 ```
-### Runnung
+### Running
 1. Test for DogAPI `pytest -v ./tests/test_dog_api.py`
 2. Test for openbrewerydb `pytest -v ./tests/test_open_brewery_db.py`
 3. Test for jsonplaceholder `pytest -v ./tests/test_json_placeholder.py`

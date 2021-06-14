@@ -12,6 +12,8 @@ def pytest_addoption(parser):
         default="200"
     )
 
+    parser.addoption("--mock", action="store_true", default=False)
+
 
 @pytest.fixture
 def base_url(request):
@@ -21,3 +23,7 @@ def base_url(request):
 @pytest.fixture
 def request_status_code(request):
     return request.config.getoption("--status_code")
+
+@pytest.fixture
+def use_mocks(request):
+    return request.config.getoption("--mock")
